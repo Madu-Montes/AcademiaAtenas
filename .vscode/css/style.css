@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 *{
   margin: 0;
@@ -16,39 +17,21 @@
   --switch-bg-url: url(../assets/moon-stars.svg);
 }
 
-/*light mode*/
-
-.light{
-  --text-color:black;
-  --bg-url: url(../assets/Background-light.jpg);
-  --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(../assets/sun.svg);
-}
-
-
 body{
-  background: var(--bg-url) no-repeat top center/cover;
-  /*
-  background-image: url(../assets/Background-mobile.jpg);
-  background-repeat: no-repeat;
-  background-position: top center; /*top muda o eixo de interesse
-  background-size: cover; /*cobrir geral*/
+  background-image: linear-gradient(to left, #141414, #232323, #323232, #434242, #545353);
   overflow-x: hidden;
   height: 100vh;
 }
 
 body *{
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text-color);
 }
 
 #container{
   width: 100%;
   max-width: 588px;
-  margin: 56px auto 0px; /*top, right, button and left reloginho*/
+  margin: 30px auto 0px; /*top, right, button and left reloginho*/
   padding: 0 24px;
 }
 
@@ -60,58 +43,25 @@ body *{
 #profile img{
   width: 112px;
   height: 112px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 #profile p{
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 1px;
   margin-top: 8px;
+  font-size: 24px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
 }
 
 .back{
   width: 36px;
   font-size: 36px;
-  margin: 10px;
-}
-
-/*switch*/
-#switch{
-  position: relative;
-  width: 64px;
-  margin: 4px auto;
-}
-
-#switch  button{
-  width: 32px;
-  height: 32px;
-  background: #FFFFFF var(--switch-bg-url) no-repeat center;
-  border: none;
-  border-radius: 50%;
-  position: absolute;
-  transform: translateY(-50%); /*centralizado  com eixo y*/
-  top: 50%; /*centralizado  com eixo y*/
-  left: 0px;
-  z-index: 1;
-  animation: slide-back .4s;
-}
-
-.light #switch button{
-  animation: slide-in 0.4s forwards;
-}
-
-#switch button:hover{
-  outline: 8px solid var(--highlight-color);
-}
-
-#switch span{
-  display: block;
-  width: 64px;
-  height: 24px;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 9999px;
+  margin: 15px 25px;
 }
 
 /*links*/
@@ -144,6 +94,10 @@ ul li a:hover{
   border: 1.5px solid var(--text-color);
 }
 
+ul li a ion-icon{
+  margin-left: 5px;
+}
+
 /*social links*/
 
 #social-links{
@@ -172,29 +126,6 @@ footer{
   font-size: 14px;
 }
 
-/*quem sou*/
-
-.historia{
-  min-width: 100%;
-  display: block;
-  padding: 15px 25px;
-  margin-top: 25px;
-}
-
-.me-img img{
-  width: 150px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.text{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 .text h1{
   margin: 10px 0;
 }
@@ -217,4 +148,61 @@ footer{
   to{
     left: 0;
   }
+}
+
+.text h1{
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  font-size: 24px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+/*QUEM SOMOS*/
+
+.historia{
+  min-width: 100%;
+  display: block;
+  padding: 15px 25px;
+  margin-top: 25px;
+}
+
+.text{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/*SERVIÇOS*/
+
+.container-servicos{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.col{
+  background-color: #141414;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: box-shadow 0.1s;
+  border: 2px solid #545353;
+}
+
+.col:hover{
+  border: 4px solid #4DFF00;
+  color: #4DFF00;
+  box-shadow: 0px 0px 35px #4DFF00, 0px 0px 15px #4dff00b0 inset;
+  text-shadow: 0px 0px 10px #4dff00bb, 0px 0px 3px #4DFF00;
 }
