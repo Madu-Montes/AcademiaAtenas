@@ -1,9 +1,28 @@
 @media (min-width: 700px) {
-    :root{
+    :root {
         --bg-url: url(../assets/Background-desk.jpg);
     }
 
-    .light{
+    .light {
         --bg-url: url(../assets/Background-desk-light.jpg);
     }
+}
+
+@media (max-width: 700px) {
+    .container-servicos {
+        display: block;
+        grid-template-columns: 100%;
+    }
+
+    .col{
+        width: 250px;
+        height: 250px;
+        margin: 15px auto;
+        padding: 5px;
+      }
+
+      #social-links{
+        display: flex;
+        margin-top: 570px;
+      }
 }
